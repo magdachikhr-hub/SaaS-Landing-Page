@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #043873;
+  --color-sky: #4f9cf9;
+  --color-accent: #ffe492;
+  --color-ink: #212529;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .page-container {
+    width: min(100% - 2.5rem, 1180px);
+    margin-inline: auto;
+  }
+  .page-section {
+    padding-block: 6rem;
+  }
+  .display-title {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+  }
+  .section-kicker {
+    color: #043873;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    width: min(100% - 5rem, 1180px);
+  }
+  .page-section {
+    padding-block: 8.75rem;
+  }
+}
+
+.hero-lines {
+  position: absolute;
+  inset: 28% -10% 0;
+  opacity: 0.16;
+  background: repeating-radial-gradient(
+    ellipse at 0 100%,
+    transparent 0 16px,
+    #fff 17px 18px,
+    transparent 19px 32px
+  );
+  transform: rotate(-8deg);
+}
+.mockup-window,
+.browser-visual {
+  overflow: hidden;
+  border-radius: 4px;
+  background: #c4ddfb;
+  box-shadow: 0 25px 60px rgb(4 56 115 / 14%);
+}
+.mockup-toolbar,
+.browser-top {
+  height: 34px;
+  background: #edf5ff;
+  border-bottom: 1px solid #d7e6f9;
+}
+.browser-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 14px;
+}
+.browser-top span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffcf5c;
+}
+.browser-top span:nth-child(2) {
+  background: #4f9cf9;
+}
+.browser-top span:nth-child(3) {
+  background: #65c18c;
+}
+.browser-body {
+  margin: 24px;
+  padding: 24px;
+  border-radius: 4px;
+  background: #fff;
+}
+.orbit-visual,
+.security-visual {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background: radial-gradient(circle, #eaf4ff, #fff 65%);
+}
+.orbit-ring {
+  position: absolute;
+  inset: 14% 20%;
+  border: 1px dashed #b6d7fb;
+  border-radius: 50%;
+  transform: rotate(22deg) scaleY(0.7);
+}
+.orbit-ring-two {
+  inset: 25% 10%;
+  transform: rotate(-25deg) scaleY(0.55);
+}
+.orbit-core {
+  position: absolute;
+  inset: calc(50% - 35px);
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #fff;
+  color: #4f9cf9;
+  font-size: 1.8rem;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgb(4 56 115 / 12%);
+}
+.orbit-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4f9cf9;
+}
+.dot-one {
+  top: 16%;
+  left: 28%;
+  background: #ffcf5c;
+}
+.dot-two {
+  top: 45%;
+  right: 16%;
+  background: #65c18c;
+}
+.dot-three {
+  bottom: 15%;
+  left: 34%;
+  background: #ff746f;
+}
+.dot-four {
+  top: 22%;
+  right: 32%;
+}
+.security-visual {
+  background: linear-gradient(135deg, #f1f8ff, #d8ebff);
+}
+.security-shield {
+  position: absolute;
+  inset: calc(50% - 50px);
+  display: grid;
+  place-items: center;
+  border: 3px solid #4f9cf9;
+  border-radius: 30px 30px 42px 42px;
+  color: #4f9cf9;
+  font-size: 2.4rem;
+  background: white;
+  box-shadow: 0 10px 30px rgb(4 56 115 / 10%);
+}
+.security-node {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: white;
+  color: #4f9cf9;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgb(4 56 115 / 12%);
+}
+.node-a {
+  top: 20%;
+  left: 16%;
+}
+.node-b {
+  top: 18%;
+  right: 17%;
+}
+.node-c {
+  bottom: 17%;
+  right: 25%;
+}
+.security-line {
+  position: absolute;
+  height: 1px;
+  background: #8ac1fb;
+  transform-origin: left;
+}
+.line-a {
+  width: 150px;
+  top: 38%;
+  left: 28%;
+  transform: rotate(24deg);
+}
+.line-b {
+  width: 150px;
+  top: 42%;
+  left: 58%;
+  transform: rotate(145deg);
+}
+.line-c {
+  width: 130px;
+  top: 63%;
+  left: 47%;
+  transform: rotate(30deg);
+}
